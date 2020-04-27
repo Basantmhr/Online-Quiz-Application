@@ -9,11 +9,14 @@ import android.os.Bundle;
 import android.util.Log;
 
 
+import com.example.onlinequizapplication.Data.AsyncGetDataCompleted;
 import com.example.onlinequizapplication.Data.questionBank;
+import com.example.onlinequizapplication.Model.questionModel;
 import com.example.onlinequizapplication.controller.AppController;
 
 import java.time.LocalTime;
-
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,9 +26,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        List<questionModel> mQuestionModelArrayList= new questionBank().getQuestion(new AsyncGetDataCompleted() {
+            @Override
+            public void onRecievedSuccess(ArrayList<questionModel> qm) {
+                Log.d("Main", "onRecievedSuccess: "+qm);
+
+            }
+        });
         setDrawableDN();
-        questionBank ql = new questionBank();
-        ql.getQuestion();
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
