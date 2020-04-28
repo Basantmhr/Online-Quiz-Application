@@ -4,6 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.activity_sign_up">
+    tools:context=".UI.activity_sign_up"
+    android:background="@drawable/ic_welcome_screen">
+    <androidx.appcompat.widget.AppCompatCheckedTextView
+        android:id="@+id/createAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/createAccountTag"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-condensed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        android:layout_marginLeft="30dp"
+        android:textColor="#ffffff"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
