@@ -5,10 +5,23 @@
     android:id="@+id/mainActivityLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_design_night"
+    android:background="@drawable/ic_welcome_screen"
     tools:context=".MainActivity">
-
-    <EditText
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/welcomeTag"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/welcomeUser"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.8"
+        android:text="@string/welcomeTagText"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/welcomeUser"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -21,41 +34,44 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.35" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/welcomePassword"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/edittextdrawable"
         android:gravity="center"
         android:hint="@string/userPassword"
         android:inputType="textPassword"
-        android:padding="10dp"
+        android:padding="15dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcomeUser" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signIn"
-        android:background="@drawable/edittextdrawable"
+        android:background="@drawable/drawablebutton"
         android:layout_width="165dp"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/signIn"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomePassword" />
+        app:layout_constraintRight_toRightOf="@id/welcomePassword"
+        app:layout_constraintTop_toBottomOf="@id/welcomePassword"
+        />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signUp"
-        android:background="@drawable/edittextdrawable"
-        android:layout_width="165dp"
+        android:background="@drawable/drawablebutton"
+        android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:text="@string/signUp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signIn" />
+        app:layout_constraintBottom_toBottomOf="parent"
+       android:layout_marginBottom="35dp"
+        app:layout_constraintHorizontal_bias="0.9"
+         />
 </androidx.constraintlayout.widget.ConstraintLayout>

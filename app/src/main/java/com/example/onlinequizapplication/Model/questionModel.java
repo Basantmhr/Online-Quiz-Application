@@ -1,5 +1,7 @@
 package com.example.onlinequizapplication.Model;
 
+
+
 public class questionModel {
     private String question ;
     private String optionTrue;
@@ -68,6 +70,7 @@ public class questionModel {
     public void setOption4(String option4) {
         this.option4 = option4;
     }
+
 
     @Override
     public String toString() {
