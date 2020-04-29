@@ -7,4 +7,5 @@
     <string name="mainActivityTitle">Quiz Application</string>
     <string name="welcomeTagText">Welcome</string>
     <string name="createAccountTag">Create Account</string>
+    <string name="userName">Name</string>
 </resources>

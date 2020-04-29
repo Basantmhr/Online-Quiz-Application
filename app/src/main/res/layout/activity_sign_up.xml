@@ -5,21 +5,73 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.activity_sign_up"
-    android:background="@drawable/ic_welcome_screen">
+    android:background="@drawable/ic_welcome_screen_full">
+
     <androidx.appcompat.widget.AppCompatCheckedTextView
         android:id="@+id/createAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/createAccountTag"
-        android:textStyle="bold"
-        android:textSize="28sp"
+        android:layout_marginLeft="28dp"
         android:fontFamily="sans-serif-condensed"
+        android:text="@string/createAccountTag"
+        android:textColor="#ffffff"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.2"
-        android:layout_marginLeft="30dp"
-        android:textColor="#ffffff"/>
+        app:layout_constraintVertical_bias="0.252"
+        android:layout_marginStart="28dp" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/signUpUserMail"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/createAccount"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="28dp"
+        android:hint="@string/userMail"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="28dp" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/signUpName"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/signUpUserMail"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="28dp"
+        android:hint="@string/userName"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="28dp" />
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/signUpPassword"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/signUpName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="28dp"
+        android:hint="@string/userPassword"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="28dp" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signUpTrue"
+        android:background="@drawable/drawablebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        app:layout_constraintTop_toBottomOf="@id/signUpPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/signUp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp" />
 
 
 

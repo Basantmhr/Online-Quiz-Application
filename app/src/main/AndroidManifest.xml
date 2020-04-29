@@ -15,7 +15,7 @@
         <activity android:name=".UI.activity_user_dashboard"/>
         <activity android:name=".UI.activity_trivia_question" />
         <activity android:name=".UI.activity_score_board" />
-        <activity android:name=".UI.activity_sign_up"  android:label="" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".UI.activity_sign_up"   android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".MainActivity" android:label="@string/mainActivityTitle">
             <intent-filter>
