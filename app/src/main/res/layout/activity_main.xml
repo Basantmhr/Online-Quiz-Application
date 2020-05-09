@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/welcomeTag"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/welcomeUser"
+        app:layout_constraintBottom_toTopOf="@id/signInUser"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_bias="0.8"
@@ -22,12 +22,14 @@
         android:layout_height="wrap_content"
         />
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/welcomeUser"
+        android:id="@+id/signInUser"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:background="@drawable/edittextdrawable"
         android:gravity="center"
         android:hint="@string/userMail"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
         android:inputType="textEmailAddress"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,7 +39,7 @@
         app:layout_constraintVertical_bias="0.35" />
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/welcomePassword"
+        android:id="@+id/signInPassword"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_marginTop="15dp"
@@ -45,10 +47,12 @@
         android:gravity="center"
         android:hint="@string/userPassword"
         android:inputType="textPassword"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
         android:padding="15dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeUser" />
+        app:layout_constraintTop_toBottomOf="@id/signInUser" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signIn"
@@ -57,8 +61,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:text="@string/signIn"
-        app:layout_constraintRight_toRightOf="@id/welcomePassword"
-        app:layout_constraintTop_toBottomOf="@id/welcomePassword"
+        app:layout_constraintRight_toRightOf="@id/signInPassword"
+        app:layout_constraintTop_toBottomOf="@id/signInPassword"
         />
 
     <androidx.appcompat.widget.AppCompatButton

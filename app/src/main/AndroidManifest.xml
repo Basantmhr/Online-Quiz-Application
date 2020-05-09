@@ -12,10 +12,10 @@
         android:roundIcon="@drawable/ic_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.activity_user_dashboard"/>
-        <activity android:name=".UI.activity_trivia_question" />
-        <activity android:name=".UI.activity_score_board" />
-        <activity android:name=".UI.activity_sign_up"   android:parentActivityName=".MainActivity"/>
+        <activity android:name=".UI.UserDashboardActivity"/>
+        <activity android:name=".UI.ShowQuestionActivity" />
+        <activity android:name=".UI.ScoreBoardActivity" />
+        <activity android:name=".UI.SignUpActivity"   android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".MainActivity" android:label="@string/mainActivityTitle">
             <intent-filter>
@@ -25,6 +25,10 @@
             </intent-filter>
 
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

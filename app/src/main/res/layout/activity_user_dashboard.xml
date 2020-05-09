@@ -4,6 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.activity_user_dashboard">
+    tools:context=".UI.UserDashboardActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textWelcomeDashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dashboardWelcomeText"
+        android:textSize="28sp"
+        app:fontFamily="@font/noto_sans_italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textNameDashboard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dashboardUsernameText"
+        android:textSize="28sp"
+        app:fontFamily="@font/noto_sans_italic"
+        app:layout_constraintLeft_toRightOf="@id/textWelcomeDashboard"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="100dp"
+        />
+
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

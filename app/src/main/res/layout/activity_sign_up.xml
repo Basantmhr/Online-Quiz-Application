@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.activity_sign_up"
+    tools:context=".UI.SignUpActivity"
     android:background="@drawable/ic_welcome_screen_full">
 
     <androidx.appcompat.widget.AppCompatCheckedTextView
@@ -31,6 +31,8 @@
         android:layout_marginLeft="28dp"
         android:hint="@string/userMail"
         android:inputType="textEmailAddress"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
         android:textAlignment="center"
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
@@ -44,6 +46,8 @@
         android:layout_marginLeft="28dp"
         android:hint="@string/userName"
         android:inputType="textPersonName"
+        android:textColorHint="#ffffff"
+        android:textColor="#ffffff"
         android:textAlignment="center"
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"
@@ -56,7 +60,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="28dp"
         android:hint="@string/userPassword"
+        android:textColorHint="#ffffff"
         android:inputType="textPassword"
+        android:textColor="#ffffff"
         android:textAlignment="center"
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp"

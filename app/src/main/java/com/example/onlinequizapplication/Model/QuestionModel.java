@@ -2,14 +2,14 @@ package com.example.onlinequizapplication.Model;
 
 
 
-public class questionModel {
+public class QuestionModel {
     private String question ;
     private String optionTrue;
     private String option1;
     private String option2;
     private String option3;
     private String option4;
-    questionModel(String question, String optionTrue, String option1, String option2, String option3, String option4)
+    QuestionModel(String question, String optionTrue, String option1, String option2, String option3, String option4)
     {
         this.question=question;
         this.option1=option1;
@@ -18,7 +18,7 @@ public class questionModel {
         this.option4=option4;
         this.optionTrue=optionTrue;
     }
-    public questionModel()
+    public QuestionModel()
     {
 
     }
@@ -74,7 +74,7 @@ public class questionModel {
 
     @Override
     public String toString() {
-        return "questionModel{" +
+        return "QuestionModel{" +
                 "question='" + question + '\'' +
                 ", optionTrue='" + optionTrue + '\'' +
                 ", option1='" + option1 + '\'' +

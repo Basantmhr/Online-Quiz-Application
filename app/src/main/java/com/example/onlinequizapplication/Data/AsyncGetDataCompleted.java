@@ -1,9 +1,9 @@
 package com.example.onlinequizapplication.Data;
 
-import com.example.onlinequizapplication.Model.questionModel;
+import com.example.onlinequizapplication.Model.QuestionModel;
 
 import java.util.ArrayList;
 
 public interface AsyncGetDataCompleted {
-    void onRecievedSuccess(ArrayList<questionModel> qm);
+    void onRecievedSuccess(ArrayList<QuestionModel> qm);
 }

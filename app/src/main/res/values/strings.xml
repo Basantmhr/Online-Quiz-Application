@@ -8,4 +8,6 @@
     <string name="welcomeTagText">Welcome</string>
     <string name="createAccountTag">Create Account</string>
     <string name="userName">Name</string>
+    <string name="dashboardWelcomeText">Welcome</string>
+    <string name="dashboardUsernameText">UserName</string>
 </resources>

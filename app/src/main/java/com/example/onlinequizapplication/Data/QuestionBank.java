@@ -5,12 +5,10 @@ import android.util.Log;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.example.onlinequizapplication.Model.questionModel;
+import com.example.onlinequizapplication.Model.QuestionModel;
 import com.example.onlinequizapplication.controller.AppController;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,8 +17,8 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class questionBank {
-    ArrayList  <questionModel> questionModelArrayList = new ArrayList<>();
+public class QuestionBank {
+    ArrayList  <QuestionModel> questionModelArrayList = new ArrayList<>();
     private String url = "https://opentdb.com/api.php?amount=15&category=22&difficulty=hard&type=multiple";
     private ArrayList <String> mString = new ArrayList<>();
     public List getQuestion(final AsyncGetDataCompleted callback){
@@ -35,7 +33,7 @@ public class questionBank {
 //                    Log.d("DataBack", "onResponse: " + jso.getString("question") + jso.getJSONArray("incorrect_answers")); //For debug
                     for(int i=0;i<response.getJSONArray("results").length();i++) {
 //                         Log.d("Ques:", "onResponse: "+response.getJSONArray("results").getJSONObject(i).getJSONArray("incorrect_answers").getString(0)); //For debug
-                        questionModel mQuestion = new questionModel();
+                        QuestionModel mQuestion = new QuestionModel();
                         mQuestion.setQuestion(response.getJSONArray("results").getJSONObject(i).getString("question"));
 
                         mString.add(response.getJSONArray("results").getJSONObject(i).getString("correct_answer"));
