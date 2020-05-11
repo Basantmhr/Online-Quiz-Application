@@ -9,8 +9,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.PatternMatcher;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -23,6 +25,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
     private final static String TAG = SignUpActivity.class.getSimpleName();
@@ -60,12 +64,16 @@ public class SignUpActivity extends AppCompatActivity {
     }
     void signUpUser(String userString,String passwordString)
     {
-        Log.d(TAG, "signUpUser: "+userString+"dd"+passwordString);
      if(TextUtils.isEmpty(userString))
     {
         Toast.makeText(this,"Please Enter UserName. ", Toast.LENGTH_SHORT).show();
         return;
     }
+     if(!Patterns.EMAIL_ADDRESS.matcher(userString).matches())
+     {
+         Toast.makeText(this,"Please Enter Valid Email. ", Toast.LENGTH_SHORT).show();
+         return;
+     }
     if(TextUtils.isEmpty(passwordString))
     {
         Toast.makeText(this,"Please Enter Password. ", Toast.LENGTH_SHORT).show();
@@ -95,5 +103,6 @@ public class SignUpActivity extends AppCompatActivity {
     {
         Intent I = new Intent(getApplicationContext() , MainActivity.class);
         startActivity(I);
+        finish();
     }
 }

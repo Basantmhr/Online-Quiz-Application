@@ -10,7 +10,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Toast;
 
@@ -32,6 +34,7 @@ import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+    private final static String TAG = MainActivity.class.getSimpleName();
     private ConstraintLayout cl;
     private AppCompatButton signInButton;
     private AppCompatButton signUpButton;
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(signUpPage);
             }
         });
+
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -64,14 +68,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        List <QuestionModel> mQuestionModelArrayList= new QuestionBank().getQuestion(new AsyncGetDataCompleted() {
+        new QuestionBank().getQuestion(new AsyncGetDataCompleted() {
             @Override
             public void onRecievedSuccess(ArrayList<QuestionModel> qm) {
                 Log.d("Main", "onRecievedSuccess: "+qm);
 
             }
         });
-        //setDrawableDN();
 
     }
 
@@ -79,9 +82,33 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser!=null)
+        {
+            Intent intent = new Intent(MainActivity.this,UserDashboardActivity.class);
+            startActivity(intent);
+            finish();
+        }
+
     }
+
     private void  signIn(String userString,String passwordString)
     {
+        if(TextUtils.isEmpty(userString))
+        {
+
+           Toast.makeText(this,"Please Enter UserName.",Toast.LENGTH_SHORT).show();
+           return;
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(userString).matches())
+        {
+            Toast.makeText(this,"Please Enter Valid Email. ", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(TextUtils.isEmpty(passwordString))
+        {
+            Toast.makeText(this,"Please Enter Password.",Toast.LENGTH_SHORT).show();
+            return;
+        }
     mAuth.signInWithEmailAndPassword(userString,passwordString).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
         @Override
         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -105,21 +132,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    void setDrawableDN()
-    {   cl=(ConstraintLayout)findViewById(R.id.mainActivityLayout);
-        LocalTime hr = LocalTime.now();
-        int intHr=hr.getHour();
-        Log.d("Hour", "setDrawableDN: "+intHr);
-
-        if(intHr>4 && intHr<18)
-        {
-            cl.setBackground(getDrawable(R.drawable.background_design_day));
-        }
-        else
-            cl.setBackground(getDrawable(R.drawable.background_design_night));
-
-
-    }
 
 }

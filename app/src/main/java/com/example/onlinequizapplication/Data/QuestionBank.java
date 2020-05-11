@@ -21,7 +21,7 @@ public class QuestionBank {
     ArrayList  <QuestionModel> questionModelArrayList = new ArrayList<>();
     private String url = "https://opentdb.com/api.php?amount=15&category=22&difficulty=hard&type=multiple";
     private ArrayList <String> mString = new ArrayList<>();
-    public List getQuestion(final AsyncGetDataCompleted callback){
+    public void getQuestion(final AsyncGetDataCompleted callback){
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, (JSONObject) null, new Response.Listener<JSONObject>() {
             @Override
@@ -69,6 +69,6 @@ public class QuestionBank {
             }
         });
         AppController.getInstance().addToRequestQueue(jsonObjectRequest);
-        return questionModelArrayList;
+
     }
 }
